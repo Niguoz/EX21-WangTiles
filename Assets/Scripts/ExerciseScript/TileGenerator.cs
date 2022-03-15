@@ -29,7 +29,6 @@ public class TileGenerator : MonoBehaviour
                 var go = new GameObject("Tile " + row + " " + col);
                 var sr = go.AddComponent<SpriteRenderer>();
                 var spriteSheet = Resources.LoadAll("Wang");
-                Debug.Log(spriteSheet[1]);
                 var sprite = (Sprite)spriteSheet[val + 1];
                 sr.sprite = sprite;
                 go.transform.position = new Vector3(col, row, 0);
