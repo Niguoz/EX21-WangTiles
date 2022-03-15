@@ -11,6 +11,7 @@ namespace WangTiles
         void Start()
         {
             Doors(_val);
+
         }
 
 
