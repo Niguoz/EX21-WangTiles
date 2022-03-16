@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 public class TileGenerator : MonoBehaviour
 {
     public Map.Size size;
@@ -28,12 +29,17 @@ public class TileGenerator : MonoBehaviour
 
                 var go = new GameObject("Tile " + row + " " + col);
                 var sr = go.AddComponent<SpriteRenderer>();
-                var spriteSheet = Resources.LoadAll("Wang");
-                var sprite = (Sprite)spriteSheet[val + 1];
-                sr.sprite = sprite;
-                go.transform.position = new Vector3(col, row, 0);
+                // var sprite = Resources.Load<Sprite>(val.ToString());
+                var operation = Addressables.LoadAssetAsync<Sprite>(val.ToString());
+                operation.Completed += OnLoadComplete;
+                // sr.sprite = sprite;
+                // go.transform.position = new Vector3(col, row, 0);
             }
-            Debug.Log(output);
         }
+    }
+
+    protected void OnLoadComplete(AsyncOperationHandle<Sprite> handle)
+    {
+
     }
 }
