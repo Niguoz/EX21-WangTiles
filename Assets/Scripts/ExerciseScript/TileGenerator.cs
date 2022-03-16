@@ -11,25 +11,23 @@ public class TileGenerator : MonoBehaviour
     public AbstractWangTile tilePrefab;
     void Start()
     {
-        Generate();
+       Generate();
     }
 
     public void Generate()
     {
-        _map = new Map(size.widht, size.height);
-        _map.GenerateMap();
+        _map = new Map(size.widht, size.height, Map.Type.Linear);
+       // _map.GenerateMap();
 
         for (int row = 0; row < size.height; row++)
         {
-            var output = "";
             for (int col = 0; col < size.widht; col++)
             {
                 var val = _map.GetTile((uint)row, (uint)col);
-                output += val + " - ";
 
-                var go = Instantiate(tilePrefab);
-                go.Init(val);
-                go.transform.position = new Vector3(col, row, 0);
+                var wt = Instantiate(tilePrefab);
+                wt.Init(val);
+                wt.transform.position = new Vector3(col, row, 0);
             }
         }
     }

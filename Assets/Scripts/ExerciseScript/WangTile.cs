@@ -8,7 +8,7 @@ public class WangTile
 
     public WangTile(uint value)
     {
-        if (value <= 0 || value >= 16)
+        if (value < 0 || value >= 16)
         {
             throw new System.Exception("I valori della tile non possono essere inferiori a 0 o superiori a 15");
         }

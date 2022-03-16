@@ -4,6 +4,14 @@ using UnityEngine;
 
 public abstract class AbstractWangTile : MonoBehaviour, IWangTile
 {
-    public abstract void Init(WangTile data);
+    protected WangTile _data;
+    public virtual void Init(WangTile data)
+    {
+        _data = data;
+    }
     
+    public bool North => _data.North;
+    public bool South => _data.South;
+    public bool East => _data.East;
+    public bool West => _data.West;
 }
