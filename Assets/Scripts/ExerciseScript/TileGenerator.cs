@@ -8,7 +8,7 @@ public class TileGenerator : MonoBehaviour
     public Map.Size size;
     public float tileSize = 32;
     private Map _map;
-
+    public AbstractWangTile tilePrefab;
     void Start()
     {
         Generate();
@@ -24,22 +24,13 @@ public class TileGenerator : MonoBehaviour
             var output = "";
             for (int col = 0; col < size.widht; col++)
             {
-                var val = _map.GetTile((uint)row, (uint)col).Value;
+                var val = _map.GetTile((uint)row, (uint)col);
                 output += val + " - ";
 
-                var go = new GameObject("Tile " + row + " " + col);
-                var sr = go.AddComponent<SpriteRenderer>();
-                // var sprite = Resources.Load<Sprite>(val.ToString());
-                var operation = Addressables.LoadAssetAsync<Sprite>(val.ToString());
-                operation.Completed += OnLoadComplete;
-                // sr.sprite = sprite;
-                // go.transform.position = new Vector3(col, row, 0);
+                var go = Instantiate(tilePrefab);
+                go.Init(val);
+                go.transform.position = new Vector3(col, row, 0);
             }
         }
-    }
-
-    protected void OnLoadComplete(AsyncOperationHandle<Sprite> handle)
-    {
-
     }
 }

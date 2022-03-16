@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class Wang : MonoBehaviour
+public class Wang : AbstractWangTile
 {
     protected WangTile _data;
     public SpriteRenderer rend;
-    public void Init(WangTile data)
+    public override void Init(WangTile data)
     {
-        var operation = Addressables.LoadAssetAsync<Sprite>(data.Value);
+        var operation = Addressables.LoadAssetAsync<Sprite>(data.Value.ToString());
         operation.Completed += OnLoadComplete;
     }
 

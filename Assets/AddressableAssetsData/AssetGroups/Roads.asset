@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Roads
+  m_EditorClassIdentifier: 
+  m_GroupName: Roads
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5383c9921ef2c414295027c244eb1256
+  m_SerializeEntries:
+  - m_GUID: c16b60bd173849b458896e9b344f1678
+    m_Address: R0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06e777c6196b38548a022b356f105753
+    m_Address: R12
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7191dfd8e8e5a43469bf662921cb3035
+    m_Address: R9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 53a2b6d2ea18ec246b1e59cb211f4b34
+    m_Address: R10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87fafea7a5e2e1a408e4324372d1ede8
+    m_Address: R11
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5cc2d6550eb3eee44953726a750bc204
+    m_Address: R8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3271068967bdccb4ea053eee78ac0bfb
+    m_Address: R2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d78a3fc9c16b4bc41b3661c9e78a13f0
+    m_Address: R1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4447a132dfaaff142889b2a4ddf8d91f
+    m_Address: R4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b3ea347427c46248a5268ac0cc99c9c
+    m_Address: R13
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5a8effe7a989ed444801fe7cff8e16bb
+    m_Address: R5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a40b070f42cbdb541b111403c29d818b
+    m_Address: R3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 836d8daadd0099444ba0008efe646052
+    m_Address: R15
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c9d46d2231dc7d468064d00b4eaf64c
+    m_Address: R7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 201a51673a58ca3478e066e7fb26b1fd
+    m_Address: R14
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9497f2abf075e1d4793b25e597b3fac9
+    m_Address: R6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2a5fb4eba76fbc141b9c1dbed4b23721, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7df16e6c4c5c01b499e8d3b1a7f723f5, type: 2}
+    - {fileID: 11400000, guid: 8a66aed5a7e8f6d438b0653cd8139677, type: 2}
