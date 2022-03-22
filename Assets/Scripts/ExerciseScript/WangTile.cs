@@ -5,15 +5,20 @@ using UnityEngine;
 public class WangTile
 {
     private uint _value;
-
-    public WangTile(uint value)
+    uint _row, _col = 0;
+    public WangTile(uint value, uint row , uint col )
     {
+        _row = row;
+        _col = col;
         if (value < 0 || value >= 16)
         {
             throw new System.Exception("I valori della tile non possono essere inferiori a 0 o superiori a 15");
         }
         _value = value;
     }
+
+    public uint Row => _row;
+    public uint Col => _col;
 
     public uint Value => _value;
 
