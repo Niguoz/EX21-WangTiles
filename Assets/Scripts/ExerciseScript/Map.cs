@@ -38,6 +38,9 @@ public class Map
             case Type.Linear:
                 GenerateLinear();
                 break;
+            case Type.Perfect:
+                GeneratePerfect();
+                break;
             default:
                 break;
 
@@ -81,9 +84,39 @@ public class Map
                         if (_map[row, col - 1].East) val += 8;
                     }
                     if (col != _widht - 1) val += (uint)(Random.Range(0, 2) < 1 ? 0 : 2);
+
+                    if (row != 0)
+                    {
+                        if (_map[row - 1, col].North) val += 4;
+                    }
+                    if (row != _height - 1) val += (uint)(Random.Range(0, 2) < 1 ? 0 : 1);
                 }
                 _map[row, col] = new WangTile((uint)val);
             }
         }
     }
+
+    public void GeneratePerfect()
+    {
+        for (uint row = 0; row < _height; row++)
+        {
+            for (uint col = 0; col < _widht; col++)
+            {
+                _map[row, col] = new WangTile(0);
+            }
+        }
+
+        var visited = new List<WangTile>();
+        var tile = _map[(uint)Random.Range(0,_height), (uint)Random.Range(0, _widht)];
+        visited.Add(tile);
+        
+        while(visited.Count > 0)
+        {
+            var t = visited[Random.Range(0, visited.Count)];
+            // cerchiamo un path
+            // cerco tutte le possibili uscite, da cui non sono ancora uscito
+        }
+    }
+
+    
 }

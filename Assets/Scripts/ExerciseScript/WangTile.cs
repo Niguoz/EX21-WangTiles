@@ -28,5 +28,30 @@ public class WangTile
     public bool SouthWest => South;
     public bool NorthWest => West;*/
 
+    public void OpenDoor(uint direction)
+    {
+        if (direction > 8) throw new System.Exception("I valori possibili per le tile vanno da 0 a 8!");
+        if (direction != 0 || direction != 1 || direction != 2 || direction != 4 || direction != 8)
+        {
+            throw new System.Exception("Puoi aprire solo una porta");
+        }
+
+        if((_value & direction) == 0) 
+        {
+            _value += direction;
+        }
+        else
+        {
+            Debug.Log("La porta è già esistente");
+        }
+    }
+
+    public void OpenDoors(uint directions)
+    {
+        OpenDoor(directions & 1);
+        OpenDoor(directions & 2);
+        OpenDoor(directions & 4);
+        OpenDoor(directions & 8);
+    }
 
 }
