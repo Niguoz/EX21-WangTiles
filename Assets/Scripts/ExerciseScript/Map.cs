@@ -124,9 +124,9 @@ public class Map
 
             // Controllo a nord
             if (
-                !((t.North) &&
-                (t.Row >= _height - 1) &&
-                (_map[t.Row + 1, t.Col].Value != 0))
+                (!t.North) &&
+                (t.Row < _height - 1) &&
+                (_map[t.Row + 1, t.Col].Value == 0)
                 )
             {
                 list.Add(_map[t.Row + 1, t.Col]);
@@ -135,9 +135,9 @@ public class Map
 
             // Controllo a sud
             if (
-                !((t.South) &&
+                (!t.South) &&
                 (t.Row != 0) &&
-                (_map[t.Row - 1, t.Col].Value != 0))
+                (_map[t.Row - 1, t.Col].Value == 0)
                 )
             {
                 list.Add(_map[t.Row - 1, t.Col]);
@@ -146,9 +146,9 @@ public class Map
 
             //Controllo a est
             if (
-                !((t.East) &&
-                (t.Col >= _widht - 1) &&
-                (_map[t.Row, t.Col + 1].Value != 0))
+                (!t.East) &&
+                (t.Col < _widht - 1) &&
+                (_map[t.Row, t.Col + 1].Value == 0)
                 )
             {
                 list.Add(_map[t.Row, t.Col + 1]);
@@ -157,9 +157,9 @@ public class Map
 
             //Controllo a ovest
             if (
-                !((t.West) &&
+                (!t.West) &&
                 (t.Col != 0) &&
-                (_map[t.Row, t.Col - 1].Value != 0))
+                (_map[t.Row, t.Col - 1].Value == 0)
                 )
             {
                 list.Add(_map[t.Row, t.Col - 1]);

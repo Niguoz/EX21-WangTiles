@@ -36,7 +36,7 @@ public class WangTile
     public void OpenDoor(uint direction)
     {
         if (direction > 8) throw new System.Exception("I valori possibili per le tile vanno da 0 a 8!");
-        if (direction != 0 || direction != 1 || direction != 2 || direction != 4 || direction != 8)
+        if (direction != 0 && direction != 1 && direction != 2 && direction != 4 && direction != 8)
         {
             throw new System.Exception("Puoi aprire solo una porta");
         }

@@ -1,4 +1,4 @@
-
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -11,6 +11,7 @@ public class Wang : AbstractWangTile
         base.Init(data);
         var operation = Addressables.LoadAssetAsync<Sprite>("R" + data.Value.ToString());
         operation.Completed += OnLoadComplete;
+
     }
 
     private void OnLoadComplete(AsyncOperationHandle<Sprite> handle)

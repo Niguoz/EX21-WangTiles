@@ -25,7 +25,7 @@ public class TileGenerator : MonoBehaviour
         {
             for (int col = 0; col < size.widht; col++)
             {
-                yield return new WaitForSeconds(.3f);
+                yield return new WaitForSeconds(.03f);
                 var val = _map.GetTile((uint)row, (uint)col);
 
                 var wt = Instantiate(tilePrefab);
